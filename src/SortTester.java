@@ -24,7 +24,7 @@ public class SortTester {
   // | Globals |
   // +---------+
 
-  Sorter sorter = new FakeSort();
+  Sorter sorter;
   Random random = new Random();
   int maxLength = 100;
   int maxRandom = 65536;
