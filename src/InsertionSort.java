@@ -33,6 +33,10 @@ public class InsertionSort implements Sorter {
 
   @Override
   public <T> void sort(T[] values, Comparator<? super T> order) {
-    // STUB
+    for (int i = 0; i < values.length; i++) {
+      for (int j = i; j >= 1 && order.compare(values[j - 1], values[j]) > 0; j--) {
+        Helpers.swap(values, j, j - 1);
+      }
+    }
   } // sort(T[], Comparator<? super T>
 } // class InsertionSort
