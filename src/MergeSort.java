@@ -47,8 +47,9 @@ public class MergeSort implements Sorter {
    * Merge the values from positions [lo..mid) and [mid..hi) back into
    * the same part of the array.
    * 
-   * @param unsortedHelper the original unsorted array that is passed as a parameter
-   *    (to prevent making multiple copies).
+   * @param unsortedHelper A helper array that is passed as a parameter that is identical to vals
+   *    when the method is called. It receives all changes made to vals at the end of this method
+   *    call.
    *
    * Preconditions: Each subarray is sorted according to comparator.
    */
@@ -90,8 +91,9 @@ public class MergeSort implements Sorter {
    * Initially you should pass 0 and vals.size() to this helper method 
    * to kick off the merge sort process.
    * 
-   * @param unsortedHelper the original unsorted array that is passed as a parameter
-   *    (to prevent making multiple copies).
+   * @param unsortedHelper A helper array that is passed as a parameter that is identical to vals
+   *    when the method is called. It receives all changes made to vals at the end of this method
+   *    call.
    */
   static <T> void mergeSort(T[] vals, int lo, int hi, Comparator<? super T> comparator,
       T[] unsortedHelper) {
