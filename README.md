@@ -13,6 +13,8 @@ Writing test cases for sorting algorithms.
 
 # Acknowledgements
 
+Samuel A. Rebelsky (for providing initial code)
+
 ## Code used from labs done with others
 
 Keely Miyamoto (merge sort lab partner)
