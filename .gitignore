@@ -24,4 +24,5 @@ hs_err_pid*
 replay_pid*
 
 # Files used for testing
-src/MergeSortExperiment.java
+src/MergeSortExperiments.java
+src/temp/
