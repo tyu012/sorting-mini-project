@@ -36,7 +36,7 @@ public class Quicksort implements Sorter {
 
   @Override
   public <T> void sort(T[] values, Comparator<? super T> order) {
-    // STUB
+    quicksort(values, order, 0, values.length);
   } // sort(T[], Comparator<? super T>
 
   // +----------------------+----------------------------------------
@@ -48,7 +48,15 @@ public class Quicksort implements Sorter {
    * the Quicksort algorithm.
    */
   <T> void quicksort(T[] values, Comparator<? super T> order, int lb, int ub) {
-    // STUB
+    // base case: singleton array is sorted
+    if (ub - lb <= 1) {
+      return;
+    }
+
+    // recursive case: partition, then quicksort [lb, pivotLoc) and [pivotLoc+1, ub)
+    int pivotLoc = partition(values, order, lb, ub);
+    quicksort(values, order, lb, pivotLoc);
+    quicksort(values, order, pivotLoc + 1, ub);
   } // quicksort(T[], Comparator<? super T>, lb, ub)
   
   /**
@@ -65,14 +73,14 @@ public class Quicksort implements Sorter {
    *
    * @return pivotLoc.
    */
-  public static <T> int partition(T[] arr, Comparator<? super T> order, int lb, int ub) {
-    int pivotLoc = (ub - lb) / 2;
-    T pivotValue = arr[pivotLoc];
+  public <T> int partition(T[] arr, Comparator<? super T> order, int lb, int ub) {
+    int midpoint = ((ub - lb) / 2) + lb;
+    T pivotValue = arr[midpoint];
     int small = lb;
     int large = ub;
 
-    // swap the pivot with lb
-    Helpers.swap(arr, small, pivotLoc);
+    // swap the pivot with lb=small
+    Helpers.swap(arr, small, midpoint);
     small++;
 
     // compare and swap
@@ -89,8 +97,8 @@ public class Quicksort implements Sorter {
     }
 
     // move the pivot to small-1 at the end
-    Helpers.swap(arr, lb, small - 1);
-
+    int pivotLoc = small - 1;
+    Helpers.swap(arr, lb, pivotLoc);
     return pivotLoc;
   }
 } // class Quicksort
