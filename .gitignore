@@ -26,3 +26,4 @@ replay_pid*
 # Files used for testing
 src/MergeSortExperiments.java
 src/temp/
+src/QuicksortExperiments.java
