@@ -1,3 +1,8 @@
+/**
+ * Class containing static helper methods for dealing with common array actions.
+ * 
+ * @author Tim Yu
+ */
 public class Helpers {
   /**
    * Swaps elements on indices i and j in arr
