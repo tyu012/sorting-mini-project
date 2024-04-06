@@ -23,7 +23,7 @@
 hs_err_pid*
 replay_pid*
 
-# Files used for testing
+# Files used for experimenting with merge sort and quicksort
 src/MergeSortExperiments.java
 src/temp/
 src/QuicksortExperiments.java
