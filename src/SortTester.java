@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -26,7 +25,7 @@ public class SortTester {
 
   Sorter sorter;
   Random random = new Random();
-  int maxLength = 100;
+  int maxLength = 1024;
   int maxRandom = 65536;
 
   // +-------+-------------------------------------------------------
