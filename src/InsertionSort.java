@@ -3,7 +3,7 @@ import java.util.Comparator;
 /**
  * Sort using insertion sort.
  *
- * @author Your Name Here
+ * @author Tim Yu
  */
 
 public class InsertionSort implements Sorter {
