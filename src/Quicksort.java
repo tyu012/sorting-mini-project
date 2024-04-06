@@ -72,7 +72,7 @@ public class Quicksort implements Sorter {
     int large = ub;
 
     // swap the pivot with lb
-    swap(arr, small, pivotLoc);
+    Helpers.swap(arr, small, pivotLoc);
     small++;
 
     // compare and swap
@@ -82,21 +82,15 @@ public class Quicksort implements Sorter {
       } else if (order.compare(arr[large - 1], pivotValue) > 0) {
         large--;
       } else {
-        swap(arr, small, large - 1);
+        Helpers.swap(arr, small, large - 1);
         small++;
         large--;
       }
     }
 
-    return pivotLoc;
-  }
+    // move the pivot to small-1 at the end
+    Helpers.swap(arr, lb, small - 1);
 
-  /**
-   * Swaps the elements at indexA and indexB of given array.
-   */
-  public static <T> void swap(T[] arr, int indexA, int indexB) {
-    T valA = arr[indexA];
-    arr[indexA] = arr[indexB];
-    arr[indexB] = valA;
+    return pivotLoc;
   }
 } // class Quicksort
